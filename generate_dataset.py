@@ -155,11 +155,10 @@ for review_id in range(1, NUM_REVIEWS + 1):
 df = pd.DataFrame(records)
 
 df.to_csv(
-    "Uttarakhand_HomeStay_Reviews.csv"
-    index = False 
+    "Uttarakhand_HomeStay_Reviews.csv",
+    index=False
 )
 
 # Print df head and len of reviews
-
 print(df.head())
 print(f"\n\nGenerated {len(df)} reviews")
