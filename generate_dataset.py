@@ -128,6 +128,38 @@ for review_id in range(1, NUM_REVIEWS + 1):
         end_date="today"
     )
 
+    records.append({
+        "review_id": review_id,
+        "homestay_id": random.randint(1001, 1050),
+        "homestay_name": homestay,
+        "district": district,
+        "state": "Uttarakhand",
+        "guest_type": random.choice(guest_types),
+        "rating": rating,
+        "review_text": review_text,
+        "sentiment": sentiment_choice,
+        "review_topic": random.choice(review_topics),
+        "review_date": review_date,
+        "host_response": random.choice(["Yes", "No"]),
+        "stay_duration_days": random.randint(1, 10),
+        "booking_channel": random.choice([
+            "Google",
+            "Direct",
+            "Tripadvisor",
+            "Referral",
+            "Travel Agency"
+        ])
+    })
+
 # Dataframe records and convert to CSV
+df = pd.DataFrame(records)
+
+df.to_csv(
+    "Uttarakhand_HomeStay_Reviews.csv"
+    index = False 
+)
 
 # Print df head and len of reviews
+
+print(df.head())
+print(f"\n\nGenerated {len(df)} reviews")
