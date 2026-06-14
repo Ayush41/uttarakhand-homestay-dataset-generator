@@ -101,6 +101,32 @@ guest_types = [
 records = []
 
 # Generate Synthetic Dataset
+for review_id in range(1, NUM_REVIEWS + 1):
+
+    district = random.choice(districts)
+    homestay = random.choice(homestays)
+
+    sentiment_choice = random.choices(
+        ["Positive", "Neutral", "Negative"],
+        weights=[65, 15, 20]
+    )[0]
+
+    if sentiment_choice == "Positive":
+        review_text = random.choice(positive_reviews)
+        rating = random.choice([4, 5])
+
+    elif sentiment_choice == "Neutral":
+        review_text = random.choice(neutral_reviews)
+        rating = 3
+
+    else:
+        review_text = random.choice(negative_reviews)
+        rating = random.choice([1, 2])
+
+    review_date = fake.date_between(
+        start_date="-2y",
+        end_date="today"
+    )
 
 # Dataframe records and convert to CSV
 
