@@ -5,6 +5,9 @@ This repository provides a compact Python utility that generates a synthetic rev
 
 The generated dataset includes realistic review metadata, sentiment labels, guest segments, booking channels, and district-level geographic context.
 
+# Published Kaggle Dataset
+🔗https://www.kaggle.com/datasets/ayushraj41/uttarakhand-homestay-reviews-dataset
+
 ## Key Use Cases
 - BI dashboard prototyping
 - Exploratory analytics for hospitality and tourism
